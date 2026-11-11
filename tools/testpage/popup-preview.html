@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Popup preview</title>
+<link rel="stylesheet" href="/dev/ext/hud.css">
+<style>
+  html, body { background: #202428; }
+  body { margin: 0; padding: 24px; width: auto; }
+  #popup-root { width: 340px; background: #0B1014; }
+  #popup-root > .frame { margin: 8px; }
+  #popup-root { padding: 0; }
+  .states { margin-top: 16px; font: 12px/1.6 ui-monospace, Menlo, monospace; color: #aab; }
+  .states a { color: #4FE3D3; margin-right: 10px; }
+</style>
+</head>
+<body>
+<div id="popup-root"></div>
+<p class="states" id="states"></p>
+<script type="module" src="popup-preview.js"></script>
+</body>
+</html>

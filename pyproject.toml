@@ -1,0 +1,31 @@
+[project]
+name = "atb-lecture-notes"
+version = "1.0.0"
+description = "Local server that turns recorded lecture audio into a transcript. Notes by an AI are an optional add-on."
+requires-python = ">=3.11,<3.13"
+dependencies = [
+    "fastapi",
+    "uvicorn",
+    "python-multipart",
+    "imageio-ffmpeg",
+    "numpy",
+    "mlx-whisper; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+
+[dependency-groups]
+notes = ["anthropic>=2.7.0", "openai"]
+dev = ["pytest", "httpx", {include-group = "notes"}]
+
+[tool.uv]
+package = false
+
+# mlx-whisper lists torch as a requirement, but the transcription path never imports it (580 MB saved).
+# This repeats the real Requires-Dist of mlx-whisper 0.4.3 without torch. Recheck it when upgrading mlx-whisper.
+[[tool.uv.dependency-metadata]]
+name = "mlx-whisper"
+version = "0.4.3"
+requires-dist = ["mlx>=0.11", "numba", "numpy", "tqdm", "more-itertools", "tiktoken", "huggingface_hub", "scipy"]
+
+[tool.pytest.ini_options]
+pythonpath = ["server", "addons/notes", "tests"]
+testpaths = ["tests"]

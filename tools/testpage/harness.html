@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Recorder harness</title>
+<style>
+  body { font: 14px/1.5 ui-monospace, Menlo, monospace; margin: 24px; }
+  input { width: 320px; font: inherit; }
+  pre { background: #f3f3f3; padding: 12px; min-height: 12em; }
+</style>
+</head>
+<body>
+<h1>Recorder harness</h1>
+<p><label>server <input id="server" type="text"></label></p>
+<p>
+  <button id="start" type="button">Start</button>
+  <button id="stop" type="button">Stop</button>
+  <button id="resume" type="button">Resume pending</button>
+</p>
+<pre id="state">loading</pre>
+<script type="module" src="harness.js"></script>
+</body>
+</html>

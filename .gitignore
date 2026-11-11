@@ -1,0 +1,37 @@
+# Lesson data and secrets: never commit
+notes/
+recordings/
+# ...but the notes add-on is code, not lesson data
+!/addons/notes/
+.env
+.env.*
+*.env
+*.pem
+secrets*
+config.local.json
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+.pytest_cache/
+
+# Runtime files
+*.db
+*.db-wal
+*.db-shm
+logs/
+*.log
+work/
+
+# Listening-test material (made from private recordings)
+tools/accuracy_lab/clips/
+tools/accuracy_lab/out/
+tools/accuracy_lab/results*.json
+
+# OS and editors
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+node_modules/

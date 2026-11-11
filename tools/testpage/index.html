@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Test page one</title>
+<style>
+  body { font: 16px/1.5 ui-monospace, Menlo, monospace; margin: 32px; background: #fff; color: #111; }
+  #timer { font-size: 40px; margin: 16px 0; }
+  button, a { font: inherit; margin-right: 12px; }
+</style>
+</head>
+<body>
+<h1>Test page one</h1>
+<p>A plain page that plays a repeating beep pattern. It holds no real content.</p>
+<div id="timer">00:00</div>
+<p><button id="play" type="button">Play</button><button id="pause" type="button">Pause</button></p>
+<p id="status">stopped</p>
+<p><a id="next" href="lesson2.html">Go to test page two</a><button id="push" type="button">Change address without reload</button></p>
+<script>
+  // Beep pattern: one short beep per second, every fourth beep higher.
+  let ctx = null, gain = null, osc = null, timerId = null, beepId = null, seconds = 0, beeps = 0;
+  const show = () => {
+    const m = String(Math.floor(seconds / 60)).padStart(2, '0');
+    const s = String(seconds % 60).padStart(2, '0');
+    document.getElementById('timer').textContent = m + ':' + s;
+  };
+  function beep() {
+    const high = beeps % 4 === 3;
+    osc.frequency.setValueAtTime(high ? 880 : 440, ctx.currentTime);
+    gain.gain.cancelScheduledValues(ctx.currentTime);
+    gain.gain.setValueAtTime(0.0001, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.4, ctx.currentTime + 0.02);
+    gain.gain.exponentialRampToValueAtTime(0.0001, ctx.currentTime + 0.25);
+    beeps += 1;
+  }
+  document.getElementById('play').addEventListener('click', async () => {
+    if (!ctx) {
+      ctx = new AudioContext();
+      gain = ctx.createGain(); gain.gain.value = 0.0001;
+      osc = ctx.createOscillator(); osc.type = 'sine';
+      osc.connect(gain).connect(ctx.destination); osc.start();
+    }
+    await ctx.resume();
+    if (!timerId) timerId = setInterval(() => { seconds += 1; show(); }, 1000);
+    if (!beepId) { beep(); beepId = setInterval(beep, 1000); }
+    document.getElementById('status').textContent = 'playing';
+  });
+  document.getElementById('pause').addEventListener('click', () => {
+    clearInterval(timerId); clearInterval(beepId); timerId = beepId = null;
+    if (ctx) ctx.suspend();
+    document.getElementById('status').textContent = 'stopped';
+  });
+  let pushes = 0;
+  document.getElementById('push').addEventListener('click', () => {
+    pushes += 1;
+    history.pushState({ n: pushes }, '', '?part=' + pushes);
+    document.getElementById('status').textContent += ' (address changed ' + pushes + ')';
+  });
+</script>
+</body>
+</html>

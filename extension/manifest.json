@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "ATB Lecture Notes",
+  "version": "1.0.0",
+  "description": "Records the audio of the current tab and turns it into a transcript and study notes on your own computer.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAr46+5X2d6XuU7MwIoSDp960cXTSVq8TV0ox+p78KAbFMvASHF+dMuXs/SJB/EFiVMCcPah9GiGSFpgN9mJvACmuqnm+2CVdAgd7jfXs+EfAMgorUh6VXWiz/lldm0tYtppG3Lxye/YmMkAom9WqrLzMKtBN+Fs0KI+zARWqAa3jGa/ULMeCvtygoRmPUrJXxmTzuFEFUrOqPmIouq6gtU4xayLnkA+hdV9e+Zfgu1wyiEruZHLEu4XiFaXdMI8Ci8k1dv57ccWjFlKgCI89ee4c392iYgGQ0Vf46y+rRcgYZOl6W9/sJCLKxchBqpKMwMdV7uGiUEH+hDYhVXklmKwIDAQAB",
+  "permissions": [
+    "tabCapture",
+    "offscreen",
+    "storage",
+    "activeTab",
+    "tabs",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "http://127.0.0.1:8765/*"
+  ],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "ATB Lecture Notes"
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}

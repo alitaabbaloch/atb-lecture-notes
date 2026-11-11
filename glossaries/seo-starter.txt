@@ -1,0 +1,61 @@
+# ATB Lecture Notes starter glossary: SEO and online selling terms.
+# Left: the spelling you want. Right: spellings the transcript may produce.
+keyword = کیورڈ | کیوورڈ | key word
+keywords = کیورڈز | کیوورڈز | کیورڈس | key words
+competitor = کمپیٹیٹر | کمپیٹر | کمپٹیٹر
+competitors = کمپیٹیٹرز | کمپیٹرز
+competition = کمپیٹیشن | کمپیٹشن
+content = کونٹنٹ | کانٹینٹ | کنٹینٹ | کنٹنٹ | کونٹینٹ
+niche = نیش
+niches = نیشز
+SEO = ایسیو | ایس ای او | ایسی او
+Google = گوگل
+website = ویب سائٹ | ویبسائٹ
+homepage = ہوم پیج
+traffic = ٹریفک | ٹرافک
+ranking = رینکنگ
+backlink = بیک لنک
+backlinks = بیک لنکس
+anchor text = انکر ٹیکسٹ | اینکر ٹیکسٹ
+intent = انٹینٹ | انٹنٹ
+grouping = گروپنگ
+cluster = کلسٹر
+programmatic = پروگرامیٹک
+autocomplete = آٹو کمپلیٹ | آٹوکمپلیٹ
+search volume = سرچ والیم | سرچ وولیم
+listing = لسٹنگ
+title = ٹائٹل
+description = ڈسکرپشن
+internal link = انٹرنل لنک
+internal links = انٹرنل لنکس
+indexing = انڈیکسنگ
+canonical = کینونیکل
+schema = سکیما | اسکیما
+Search Console = سرچ کنسول
+CTR = سی ٹی آر
+Canva = کینوا
+WordPress = ورڈ پریس | ورڈپریس | word press
+Core Web Vitals = کور ویب وائٹلز
+ChatGPT = چیٹ جی پی ٹی | chat gpt | چیر جی پی ٹی | چارجی پیٹی
+Ahrefs = ایچ ریفز | اے اچ رفز | ایچ ریفس | ایچ رفز | HRF
+Semrush = سیم رش | سیم ریش
+Etsy = ایٹسی | ایٹسے
+eRank = ای رینک
+eHunt = ای ہنٹ | ای ہنڈ
+Gemini = جیمنائی
+AdSense = ایڈسینس | ایڈ سینس
+vibe coding = وائب کوڈنگ | white coding
+vibe code = وائب کوڈ | white code
+low DR = لو ڈی آر | لوڈی آر | لوڈ ڈی آر
+admin panel = ایڈمن پینل
+SERP = سرپ
+Site Explorer = سائٹ ایکسپلورر
+Fiverr = فائیور
+Upwork = اپ ورک
+KD
+DR
+DA
+Quora
+Claude
+Next.js
+CMS

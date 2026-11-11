@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>ATB Lecture Notes</title>
+  <link rel="stylesheet" href="hud.css">
+</head>
+<body>
+  <main class="frame">
+    <i class="br tl"></i><i class="br tr"></i><i class="br bl"></i><i class="br brr"></i>
+
+    <header class="bar">
+      <h1>ATB Lecture Notes</h1>
+      <button id="server" class="srv off" type="button">[ server off ]</button>
+    </header>
+
+    <label class="row"><span>course</span>
+      <input id="course" list="courses" autocomplete="off" spellcheck="false">
+      <datalist id="courses"></datalist>
+    </label>
+    <label class="row"><span>lesson</span>
+      <input id="lesson" autocomplete="off" spellcheck="false">
+    </label>
+    <label class="row"><span>speed</span>
+      <select id="speed">
+        <option value="1">1x</option>
+        <option value="1.25">1.25x</option>
+        <option value="1.5">1.5x</option>
+        <option value="1.75">1.75x</option>
+        <option value="2">2x</option>
+      </select>
+    </label>
+
+    <section id="idle" class="action">
+      <button id="record" class="btn" type="button">Record this tab</button>
+    </section>
+
+    <section id="live" class="action" hidden>
+      <div class="live-top">
+        <div id="timer" class="timer">00:00:00</div>
+        <div class="live-side"><div><i class="recdot"></i><span>rec</span></div><div id="live-speed">speed 1x</div></div>
+      </div>
+      <canvas id="wave" class="wave" width="296" height="28"></canvas>
+      <button id="stop" class="btn filled" type="button">Stop and transcribe</button>
+    </section>
+
+    <div id="notes" class="notes"></div>
+
+    <section class="queue">
+      <h2 id="queue-title">queue 00</h2>
+      <ul id="queue"></ul>
+      <p id="queue-empty" class="empty">no lessons yet</p>
+    </section>
+  </main>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
